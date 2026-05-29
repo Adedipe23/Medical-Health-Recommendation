@@ -7,8 +7,8 @@ from app.api.routes import auth, prediction, history
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="AI Medical Recommendation System",
-    description="A rule-based symptom checker and health recommendation API",
+    title="Medical Recommendation System",
+    description="A symptom checker and health recommendation API",
     version="1.0.0",
 )
 
@@ -27,4 +27,4 @@ app.include_router(history.router)
 
 @app.get("/")
 def root():
-    return {"message": "AI Medical Recommendation System API is running"}
+    return {"message": "Medical Recommendation System API is running"}

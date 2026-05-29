@@ -12,6 +12,11 @@ export default function Navbar() {
         <Link href="/" className="text-xl font-bold text-blue-700">
           MediRec
         </Link>
+        {user?.name && (
+          <span className="hidden sm:inline text-sm text-gray-500 ml-2">
+            Welcome, {user.name}
+          </span>
+        )}
         <div className="flex items-center gap-4">
           {user ? (
             <>

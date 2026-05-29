@@ -45,13 +45,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const data = await res.json()
     setToken(data.access_token)
     localStorage.setItem('token', data.access_token)
-    // Fetch user info - for MVP we store minimal info
-    const payload = JSON.parse(atob(data.access_token.split('.')[1]))
-    const userRes = await fetch('http://localhost:8000/history', {
+    const userRes = await fetch('http://localhost:8000/auth/me', {
       headers: { Authorization: `Bearer ${data.access_token}` },
     })
     if (userRes.ok) {
-      const userData: User = { id: parseInt(payload.sub), name: '', email }
+      const userData: User = await userRes.json()
       setUser(userData)
       localStorage.setItem('user', JSON.stringify(userData))
     }
