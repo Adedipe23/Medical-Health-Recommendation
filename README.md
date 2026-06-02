@@ -6,7 +6,7 @@ Built with **FastAPI** (Python backend) and **Next.js** (React frontend), the sy
 
 ---
 
-## 👨‍🏫 Professor Quick Start
+##  Quick Start
 
 **Prerequisites:** [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/).
 
